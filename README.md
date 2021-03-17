@@ -1,0 +1,1 @@
+This projects takes inspiration from [replicatedhq/dockerfilelint](https://github.com/replicatedhq/dockerfilelint) for parsing and creating an AST from dockerfiles.
