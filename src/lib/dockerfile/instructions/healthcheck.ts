@@ -1,14 +1,15 @@
 import { Instruction } from "../instruction"
+import { InstructionType } from "../instructionHandler"
 
 export default class HEALTHCHECK extends Instruction {
-  name = "HEALTHCHECK"
+  name = InstructionType.HEALTHCHECK
   value: string
-  constructor(node: string) {
-    super(node)
-    this.value = this._inputNode.slice(12, this._inputNode.length)
+  constructor(inputValue: string) {
+    super(inputValue)
+    this.value = inputValue.slice(12, inputValue.length)
   }
   /** Ensure a valid image is selected for the base image*/
-  validate() : boolean{
+  validate(): boolean{
     return true
   }
 }

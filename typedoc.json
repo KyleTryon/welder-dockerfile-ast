@@ -1,0 +1,4 @@
+{
+  "entryPoints": ["./src/index.ts", "./src/lib/dockerfile/index.ts"],
+  "out": "docs"
+}

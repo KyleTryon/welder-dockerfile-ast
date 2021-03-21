@@ -10,7 +10,9 @@ describe("Validate all instructions are properly loaded", () => {
   const instructionFilesNamesArray: string[] = []
   const instructionSetNamesArray: string[] = []
   instructionFiles.forEach(file => {
-    instructionFilesNamesArray.push(file.slice(0, -3).toUpperCase())
+    if (file != "index.ts") {
+      instructionFilesNamesArray.push(file.slice(0, -3).toUpperCase())
+    }
   })
   instructionSet.forEach((key) => {
     instructionSetNamesArray.push(key.name)

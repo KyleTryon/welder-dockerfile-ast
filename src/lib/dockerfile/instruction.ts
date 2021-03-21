@@ -1,12 +1,16 @@
+import {InstructionType} from "./instructionHandler"
 /**
  * Represents a Dockerfile Instruction (Abstract).
+ * @constructor
+ * @param {string} inputValue - The input value string for the instruction. Value originates from parse()
  */
 export abstract class Instruction {
-  abstract name: string
+  abstract name: InstructionType
   abstract value: string
-  protected _inputNode: string
-  constructor(node: string) {
-    this._inputNode = node
+  // abstract type: "array" | "string" | "object"
+  private _inputValue: string
+  constructor(inputValue: string) {
+    this._inputValue = inputValue
   }
   /**
    * Validate each individual instruction's value with unique rules to that instruction
@@ -14,4 +18,7 @@ export abstract class Instruction {
   abstract validate(): boolean // Integrate error messages later
 }
 
-export type InstructionConstructor = new (node: string) => Instruction
+/**
+ * 
+ */
+export type InstructionConstructor = new (inputValue: string) => Instruction
